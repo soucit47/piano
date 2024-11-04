@@ -7,7 +7,6 @@ keys.forEach(function(key){
 
 // Write named functions that change the color of the keys below
 const keyPlay = pressed => {
-  console.log('key pressed');
   pressed.target.style.backgroundColor = 'blue';
 };
 
@@ -23,7 +22,7 @@ function noteHandler(note){
 
 // Write a loop that runs the array elements through the function
 notes.forEach(function(key){
-  noteHandler(document.getElementById(key));
+  noteHandler(key);
 });
 
 // These variables store the buttons that progress the user through the lyrics
@@ -41,7 +40,10 @@ nextThree.hidden = true;
 startOver.hidden= true;
 
 // Write anonymous event handler property and function for the first progress button
-
+nextOne.addEventListener('click', function() {
+    nextTwo.hidden = false;
+    nextOne.hidden = true;
+});
 
 // Write anonymous event handler property and function for the second progress button
 
